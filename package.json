@@ -1,0 +1,8 @@
+{
+  "name": "gym-membership-management",
+  "version": "1.0.0",
+  "description": "Gym Membership Management System using Express and MySQL",
+  "main": "app.js",
+  "scripts": { "start": "node app.js", "dev": "node app.js" },
+  "dependencies": { "express": "^4.21.2", "mysql2": "^3.14.0" }
+}

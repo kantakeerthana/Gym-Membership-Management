@@ -1,0 +1,415 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keerthana Elite Fitness</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <aside class="sidebar">
+
+        <div class="brand">
+            <span class="brand-mark">KE</span>
+            <div>
+                <strong>KEERTHANA</strong>
+                <small>ELITE FITNESS</small>
+            </div>
+        </div>
+
+        <p class="nav-label">MAIN MENU</p>
+
+        <button class="nav-link active" data-view="dashboard">
+            ▦ &nbsp; Dashboard
+        </button>
+
+        <button class="nav-link" data-view="members">
+            ♙ &nbsp; Members
+        </button>
+
+        <button class="nav-link" data-view="plans">
+            ▤ &nbsp; Membership Plans
+        </button>
+
+        <button class="nav-link" data-view="subscriptions">
+            ▣ &nbsp; Subscriptions
+        </button>
+
+        <div class="sidebar-note">
+            <span>🏋️</span>
+            <strong>Keerthana Elite Fitness</strong>
+            <small>Strength, Fitness and Healthy Living.</small>
+        </div>
+
+    </aside>
+
+    <main class="main">
+
+        <header class="topbar">
+            <div>
+                <span class="eyebrow">KEERTHANA ELITE FITNESS</span>
+                <h1 id="pageTitle">Dashboard</h1>
+            </div>
+
+            <div class="admin">
+                <span class="avatar">K</span>
+                <div>
+                    <strong>Administrator</strong>
+                    <small>Gym Manager</small>
+                </div>
+            </div>
+        </header>
+
+        <!-- DASHBOARD -->
+
+        <section id="dashboard" class="view">
+
+            <div class="welcome">
+                <div>
+                    <span class="eyebrow light">
+                        WELCOME TO KEERTHANA ELITE FITNESS
+                    </span>
+
+                    <h2>Build Strength.<br>Achieve Excellence.</h2>
+
+                    <p>
+                        Stronger Today • Healthier Tomorrow
+                    </p>
+                </div>
+
+                <div class="welcome-icon">🏋️</div>
+            </div>
+
+            <div class="stats">
+
+                <article class="stat-card">
+                    <span class="stat-icon orange">♙</span>
+                    <p>Total Members</p>
+                    <strong id="totalMembers">—</strong>
+                    <small>Registered members</small>
+                </article>
+
+                <article class="stat-card">
+                    <span class="stat-icon blue">▤</span>
+                    <p>Membership Plans</p>
+                    <strong id="totalPlans">—</strong>
+                    <small>Available plans</small>
+                </article>
+
+                <article class="stat-card">
+                    <span class="stat-icon green">▣</span>
+                    <p>Total Subscriptions</p>
+                    <strong id="totalSubscriptions">—</strong>
+                    <small>Recorded subscriptions</small>
+                </article>
+
+            </div>
+
+            <div class="panel intro-panel">
+
+                <div>
+                    <span class="eyebrow">ABOUT OUR SYSTEM</span>
+
+                    <h3>Keerthana Elite Fitness Management</h3>
+
+                    <p>
+                        Manage gym members, membership plans and
+                        subscriptions efficiently through one system.
+                        Maintain member details and track membership
+                        payments easily.
+                    </p>
+                </div>
+
+                <div class="quick-links">
+                    <button class="primary-btn" data-goto="members">
+                        Manage Members
+                    </button>
+
+                    <button class="secondary-btn" data-goto="subscriptions">
+                        View Subscriptions
+                    </button>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- MEMBERS -->
+
+        <section id="members" class="view hidden">
+
+            <div class="section-heading">
+                <div>
+                    <span class="eyebrow">MEMBER DIRECTORY</span>
+                    <h2>Members</h2>
+                    <p>Add and maintain gym member details.</p>
+                </div>
+            </div>
+
+            <div class="panel form-panel">
+
+                <h3 id="memberFormTitle">Add New Member</h3>
+
+                <form id="memberForm" class="form-grid">
+
+                    <input type="hidden" id="memberId">
+
+                    <label>
+                        Full Name
+                        <input id="memberName" required
+                        placeholder="Enter member name">
+                    </label>
+
+                    <label>
+                        Email Address
+                        <input id="memberEmail" type="email" required
+                        placeholder="name@example.com">
+                    </label>
+
+                    <label>
+                        Phone Number
+                        <input id="memberPhone" required
+                        placeholder="Enter phone number">
+                    </label>
+
+                    <label>
+                        Join Date
+                        <input id="memberJoinDate" type="date" required>
+                    </label>
+
+                    <label>
+                        Status
+                        <select id="memberStatus">
+                            <option>Active</option>
+                            <option>Inactive</option>
+                        </select>
+                    </label>
+
+                    <div class="form-actions">
+                        <button class="primary-btn" type="submit">
+                            Save Member
+                        </button>
+
+                        <button class="secondary-btn" type="button"
+                        id="cancelMemberEdit">
+                            Clear
+                        </button>
+                    </div>
+
+                </form>
+
+            </div>
+
+            <div class="panel">
+
+                <div class="panel-heading">
+                    <h3>All Members</h3>
+                    <input class="search" id="memberSearch"
+                    placeholder="Search members...">
+                </div>
+
+                <div class="table-wrap">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Phone</th>
+                                <th>Join Date</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="membersBody"></tbody>
+                    </table>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- MEMBERSHIP PLANS -->
+
+        <section id="plans" class="view hidden">
+
+            <div class="section-heading">
+                <div>
+                    <span class="eyebrow">PLANS AND PRICING</span>
+                    <h2>Membership Plans</h2>
+                    <p>Manage the membership plans offered by our gym.</p>
+                </div>
+            </div>
+
+            <div class="panel form-panel">
+
+                <h3>Add Membership Plan</h3>
+
+                <form id="planForm" class="form-grid">
+
+                    <label>
+                        Plan Name
+                        <input id="planName" required
+                        placeholder="Example: Monthly">
+                    </label>
+
+                    <label>
+                        Duration (Months)
+                        <input id="planDuration" type="number"
+                        min="1" required placeholder="1">
+                    </label>
+
+                    <label>
+                        Fee (₹)
+                        <input id="planFee" type="number"
+                        min="0" step="0.01" required
+                        placeholder="1000">
+                    </label>
+
+                    <label>
+                        Description
+                        <input id="planDescription"
+                        placeholder="Plan details">
+                    </label>
+
+                    <div class="form-actions">
+                        <button class="primary-btn" type="submit">
+                            Add Plan
+                        </button>
+                    </div>
+
+                </form>
+
+            </div>
+
+            <div class="panel">
+
+                <div class="panel-heading">
+                    <h3>Available Plans</h3>
+                </div>
+
+                <div class="table-wrap">
+                    <table>
+                        <thead>
+    <tr>
+        <th>ID</th>
+        <th>Plan</th>
+        <th>Duration</th>
+        <th>Fee</th>
+        <th>Description</th>
+        <th>Actions</th>
+    </tr>
+</thead>
+
+                        <tbody id="plansBody"></tbody>
+                    </table>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- SUBSCRIPTIONS -->
+
+        <section id="subscriptions" class="view hidden">
+
+            <div class="section-heading">
+                <div>
+                    <span class="eyebrow">MEMBERSHIP RECORDS</span>
+                    <h2>Subscriptions</h2>
+                    <p>Assign plans to members and track payments.</p>
+                </div>
+            </div>
+
+            <div class="panel form-panel">
+
+                <h3>Create Subscription</h3>
+
+                <form id="subscriptionForm" class="form-grid">
+
+                    <label>
+                        Member
+                        <select id="subscriptionMember" required>
+                            <option value="">Select member</option>
+                        </select>
+                    </label>
+
+                    <label>
+                        Membership Plan
+                        <select id="subscriptionPlan" required>
+                            <option value="">Select plan</option>
+                        </select>
+                    </label>
+
+                    <label>
+                        Start Date
+                        <input id="subscriptionStart" type="date" required>
+                    </label>
+
+                    <label>
+                        End Date
+                        <input id="subscriptionEnd" type="date" required>
+                    </label>
+
+                    <label>
+                        Payment Status
+                        <select id="subscriptionStatus">
+                            <option>Paid</option>
+                            <option>Pending</option>
+                        </select>
+                    </label>
+
+                    <div class="form-actions">
+                        <button class="primary-btn" type="submit">
+                            Save Subscription
+                        </button>
+                    </div>
+
+                </form>
+
+            </div>
+
+            <div class="panel">
+
+                <div class="panel-heading">
+                    <h3>All Subscriptions</h3>
+                </div>
+
+                <div class="table-wrap">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Member</th>
+                                <th>Plan</th>
+                                <th>Fee</th>
+                                <th>Start Date</th>
+                                <th>End Date</th>
+                                <th>Payment</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="subscriptionsBody"></tbody>
+                    </table>
+                </div>
+
+            </div>
+
+        </section>
+
+        <div id="message" class="message hidden"></div>
+
+        <footer>
+            © 2026 Keerthana Elite Fitness. All Rights Reserved.
+        </footer>
+
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
